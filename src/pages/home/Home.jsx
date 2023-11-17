@@ -1,4 +1,4 @@
-import Header from "../../Header";
+import Header from "../../components/Header";
 
 function Home() {
   return (
@@ -6,7 +6,7 @@ function Home() {
       <div className="flex flex-col h-[100dvh] bg-[#242424] text-gray-300">
         <Header />
         <div className="grow  flex justify-center items-center text-4xl">
-          Mahadev
+          Har Har Mahadev
         </div>
       </div>
     </>
