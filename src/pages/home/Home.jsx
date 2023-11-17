@@ -1,6 +1,9 @@
+import { useState } from "react";
 import Header from "../../components/Header";
 
 function Home() {
+  const [value, setValue] = useState();
+
   return (
     <>
       <div className="flex flex-col w-full h-[100dvh] text-gray-300">
