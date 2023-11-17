@@ -10,7 +10,9 @@ function Header() {
           {isAuthenticated ? (
             <div
               className="bg-red-500 px-4 py-2 rounded-lg sm:hover:bg-red-600  sm:cursor-pointer"
-              onClick={() => logout({})}
+              onClick={() =>
+                logout({ logoutParams: { returnTo: window.location.origin } })
+              }
             >
               Logout
             </div>
@@ -22,7 +24,14 @@ function Header() {
               >
                 Login
               </div>
-              <div className="bg-blue-700 px-4 py-2 rounded-lg sm:hover:bg-blue-900  sm:cursor-pointer">
+              <div
+                className="bg-blue-700 px-4 py-2 rounded-lg sm:hover:bg-blue-900  sm:cursor-pointer"
+                onClick={() =>
+                  loginWithRedirect({
+                    authorizationParams: { screen_hint: "signup" },
+                  })
+                }
+              >
                 Get started
               </div>
             </>
