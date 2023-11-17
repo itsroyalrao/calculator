@@ -10,7 +10,7 @@ function Home() {
     if (!total) setTotal(total + firstValue);
     else if (expression === "/") setTotal(total / firstValue);
     else if (expression === "-") setTotal(total - firstValue);
-    else if (expression === "*") setTotal(total * firstValue);
+    else if (expression === "x") setTotal(total * firstValue);
     else setTotal(total + firstValue);
   }
 
@@ -19,7 +19,7 @@ function Home() {
       <div className="flex flex-col w-full h-[100dvh] text-gray-300">
         <Header />
         <div className="w-full h-[25%] bg-[#323232]">
-          <div className="flex justify-end items-center h-full text-7xl pr-2 sm:pr-4">
+          <div className="flex justify-end items-center h-full text-7xl pr-2 sm:pr-4 tracking-wider">
             {firstValue && total
               ? total + expression + firstValue
               : firstValue
@@ -88,7 +88,7 @@ function Home() {
             className="flex justify-center items-center bg-[#323232] rounded-full sm:cursor-pointer active:rounded-xl sm:hover:bg-[#484848]"
             onClick={() => {
               setFirstValue(null);
-              setExpression("*");
+              setExpression("x");
               arithmetic();
             }}
           >
