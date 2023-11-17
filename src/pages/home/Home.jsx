@@ -6,7 +6,7 @@ function Home() {
       <div className="flex flex-col w-full h-[100dvh] text-gray-300">
         <Header />
         <div className="w-full h-[30%] sm:h-[25%] bg-[#323232]"></div>
-        <div className="w-full grow grid grid-cols-4 gap-3 bg-[#212121] font-bold p-3 text-2xl">
+        <div className="w-full grow grid grid-cols-4 gap-3 bg-[#212121] font-bold p-3 text-3xl sm:text-2xl">
           <div className="flex justify-center items-center bg-red-600 rounded-full sm:cursor-pointer active:rounded-xl sm:hover:bg-red-500">
             AC
           </div>
