@@ -5,13 +5,14 @@ function Home() {
   const [firstValue, setFirstValue] = useState(null);
   const [total, setTotal] = useState(0);
   const [expression, setExpression] = useState(null);
+  const [clickedEqual, setClickedEqual] = useState(false);
 
   function arithmetic() {
     if (!total) setTotal(total + firstValue);
-    else if (expression === "/") setTotal(total / firstValue);
+    else if (expression === "+") setTotal(total + firstValue);
     else if (expression === "-") setTotal(total - firstValue);
     else if (expression === "x") setTotal(total * firstValue);
-    else setTotal(total + firstValue);
+    else if (expression === "/") setTotal(total / firstValue);
   }
 
   return (
@@ -20,7 +21,9 @@ function Home() {
         <Header />
         <div className="w-full h-[25%] bg-[#323232]">
           <div className="flex justify-end items-center h-full text-7xl pr-2 sm:pr-4 tracking-wider">
-            {firstValue && total
+            {!expression && total
+              ? total
+              : firstValue && total
               ? total + expression + firstValue
               : firstValue
               ? firstValue
@@ -41,8 +44,15 @@ function Home() {
           <div className="flex justify-center items-center bg-[#323232] rounded-full sm:cursor-pointer active:rounded-xl sm:hover:bg-[#484848]">
             ( )
           </div>
-          <div className="flex justify-center items-center bg-[#323232] rounded-full sm:cursor-pointer active:rounded-xl sm:hover:bg-[#484848]">
-            %
+          <div
+            className="flex justify-center items-center bg-[#323232] rounded-full sm:cursor-pointer active:rounded-xl sm:hover:bg-[#484848]"
+            onClick={() => {
+              if (!firstValue) setTotal(total * total);
+              else setTotal(firstValue * firstValue);
+              setFirstValue(null);
+            }}
+          >
+            x²
           </div>
           <div
             className="flex justify-center items-center bg-[#323232] rounded-full sm:cursor-pointer active:rounded-xl sm:hover:bg-[#484848]"
@@ -57,6 +67,11 @@ function Home() {
           <div
             className="flex justify-center items-center bg-[#323232] rounded-full sm:cursor-pointer active:rounded-xl sm:hover:bg-[#484848]"
             onClick={(e) => {
+              if (clickedEqual && !expression) {
+                setExpression(null);
+                setTotal(0);
+                setClickedEqual(false);
+              }
               if (!firstValue) setFirstValue(parseInt(e.target.innerHTML));
               else
                 setFirstValue(firstValue * 10 + parseInt(e.target.innerHTML));
@@ -67,6 +82,11 @@ function Home() {
           <div
             className="flex justify-center items-center bg-[#323232] rounded-full sm:cursor-pointer active:rounded-xl sm:hover:bg-[#484848]"
             onClick={(e) => {
+              if (clickedEqual && !expression) {
+                setExpression(null);
+                setTotal(0);
+                setClickedEqual(false);
+              }
               if (!firstValue) setFirstValue(parseInt(e.target.innerHTML));
               else
                 setFirstValue(firstValue * 10 + parseInt(e.target.innerHTML));
@@ -77,6 +97,11 @@ function Home() {
           <div
             className="flex justify-center items-center bg-[#323232] rounded-full sm:cursor-pointer active:rounded-xl sm:hover:bg-[#484848]"
             onClick={(e) => {
+              if (clickedEqual && !expression) {
+                setExpression(null);
+                setTotal(0);
+                setClickedEqual(false);
+              }
               if (!firstValue) setFirstValue(parseInt(e.target.innerHTML));
               else
                 setFirstValue(firstValue * 10 + parseInt(e.target.innerHTML));
@@ -97,6 +122,11 @@ function Home() {
           <div
             className="flex justify-center items-center bg-[#323232] rounded-full sm:cursor-pointer active:rounded-xl sm:hover:bg-[#484848]"
             onClick={(e) => {
+              if (clickedEqual && !expression) {
+                setExpression(null);
+                setTotal(0);
+                setClickedEqual(false);
+              }
               if (!firstValue) setFirstValue(parseInt(e.target.innerHTML));
               else
                 setFirstValue(firstValue * 10 + parseInt(e.target.innerHTML));
@@ -107,6 +137,11 @@ function Home() {
           <div
             className="flex justify-center items-center bg-[#323232] rounded-full sm:cursor-pointer active:rounded-xl sm:hover:bg-[#484848]"
             onClick={(e) => {
+              if (clickedEqual && !expression) {
+                setExpression(null);
+                setTotal(0);
+                setClickedEqual(false);
+              }
               if (!firstValue) setFirstValue(parseInt(e.target.innerHTML));
               else
                 setFirstValue(firstValue * 10 + parseInt(e.target.innerHTML));
@@ -117,6 +152,11 @@ function Home() {
           <div
             className="flex justify-center items-center bg-[#323232] rounded-full sm:cursor-pointer active:rounded-xl sm:hover:bg-[#484848]"
             onClick={(e) => {
+              if (clickedEqual && !expression) {
+                setExpression(null);
+                setTotal(0);
+                setClickedEqual(false);
+              }
               if (!firstValue) setFirstValue(parseInt(e.target.innerHTML));
               else
                 setFirstValue(firstValue * 10 + parseInt(e.target.innerHTML));
@@ -137,6 +177,11 @@ function Home() {
           <div
             className="flex justify-center items-center bg-[#323232] rounded-full sm:cursor-pointer active:rounded-xl sm:hover:bg-[#484848]"
             onClick={(e) => {
+              if (clickedEqual && !expression) {
+                setExpression(null);
+                setTotal(0);
+                setClickedEqual(false);
+              }
               if (!firstValue) setFirstValue(parseInt(e.target.innerHTML));
               else
                 setFirstValue(firstValue * 10 + parseInt(e.target.innerHTML));
@@ -147,6 +192,11 @@ function Home() {
           <div
             className="flex justify-center items-center bg-[#323232] rounded-full sm:cursor-pointer active:rounded-xl sm:hover:bg-[#484848]"
             onClick={(e) => {
+              if (clickedEqual && !expression) {
+                setExpression(null);
+                setTotal(0);
+                setClickedEqual(false);
+              }
               if (!firstValue) setFirstValue(parseInt(e.target.innerHTML));
               else
                 setFirstValue(firstValue * 10 + parseInt(e.target.innerHTML));
@@ -157,6 +207,11 @@ function Home() {
           <div
             className="flex justify-center items-center bg-[#323232] rounded-full sm:cursor-pointer active:rounded-xl sm:hover:bg-[#484848]"
             onClick={(e) => {
+              if (clickedEqual && !expression) {
+                setExpression(null);
+                setTotal(0);
+                setClickedEqual(false);
+              }
               if (!firstValue) setFirstValue(parseInt(e.target.innerHTML));
               else
                 setFirstValue(firstValue * 10 + parseInt(e.target.innerHTML));
@@ -177,6 +232,11 @@ function Home() {
           <div
             className="flex justify-center items-center bg-[#323232] rounded-full sm:cursor-pointer active:rounded-xl sm:hover:bg-[#484848]"
             onClick={(e) => {
+              if (clickedEqual && !expression) {
+                setExpression(null);
+                setTotal(0);
+                setClickedEqual(false);
+              }
               if (!firstValue) setFirstValue(parseInt(e.target.innerHTML));
               else
                 setFirstValue(firstValue * 10 + parseInt(e.target.innerHTML));
@@ -206,6 +266,7 @@ function Home() {
               setExpression(null);
               setFirstValue(null);
               arithmetic();
+              setClickedEqual(true);
             }}
           >
             =
